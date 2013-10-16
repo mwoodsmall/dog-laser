@@ -3,7 +3,8 @@ function(){
 		var degreesX = 90,
 			degreesY = 90,
 			laserOn = false,
-			socket="";
+			socket="",
+			connections=0;
 			
 		var center = function (){
 			socket.emit("center", {degrees : degreesX});
@@ -11,10 +12,16 @@ function(){
 		
 		socket= io.connect('http://localhost:8080');
 		socket.on("connected",function(data){
-			$("#serverConnect").html(data.message)
+			$("#serverConnect").html(data.message);
 		});
-		socket.on("message",function(data){
-			$("#serverMessages").html($("#serverMessages").html()+"<h2>"+data.message+"</h2>");
+		socket.on("userJoin",function(){
+			connections++;
+			$("#serverMessages").html("<h2>"+ connections + "socket.io connections</h2>");
+		});
+		
+		socket.on("userLeave",function(){
+			connections--;
+			$("#serverMessages").html("<h2>"+ connections + "socket.io connections</h2>");
 		});
 		
 		center();
