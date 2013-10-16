@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-    <script src="http://localhost:8080/socket.io/socket.io.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-	<script src="../js/web/init.js"></script>
+        <meta charset="UTF-8">
+    <script src="localhost:8181/socket.io/socket.io.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="init.js"></script>
+        <style>
+        body{
+                -webkit-transform-origin: center;
+                -moz-transform-origin: center;
+                transform-origin: center;
+        }
+        #joystick{
+                -webkit-transform: scale(4);
+                -moz-transform: scale(4);
+                transform: scale(4);
+        }
+        </style>
 </head>
 <body>
-	<div id="serverConnect"></div>
-	<div id="serverMessages"></div>
-	<div id="aimBox" style="background-color:red; width:720px; height:720px"></div>
-	<div id ="joyContainer" style="height:180px; width:180px; position:relative; background-color:blue;">
-		<div id="joystick" style="height:1px; width:1px; border:5px solid red; position:absolute; left:90px; top:90px">
-		</div>
-	</div>
+        <div id="serverConnect"></div>
+        <div id="serverMessages"></div>
+        <img style="float:left"  src="http://dog.bounceme.net:8080"/>
+        <div id ="joyContainer" style="float:left; margin-left:100px;  height:340px; width:340px; position:relative; background-color:blue;">
+                <div id="joystick" style="height:10px; width:10px; background-color:white; margin-left:-5px; margin-top-5px; border-radius:10px; position:absolute; left:90px; top:90px">
+                </div>
+        </div>
 </body>
 </html>

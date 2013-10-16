@@ -22,11 +22,12 @@ function LaserPlatform(board, five) {
 	self.servoTilt.center();
 }
 
-LaserPlatform.prototype.pan = function( degrees ) {
+LaserPlatform.prototype.pan = function( degrees, duration, callback ) {
 	this.servoPan.move(degrees);
 };
 
-LaserPlatform.prototype.tilt = function( degrees ) {
+
+LaserPlatform.prototype.tilt = function( degrees, ?duration, ?callback ) {
   	this.servoTilt.move(degrees);
 };
 
@@ -52,6 +53,10 @@ LaserPlatform.prototype.laserOff = function (){
 
 LaserPlatform.prototype.laserStrobe = function (){
 	//this.laser.off();
+};
+
+LaserPlatform.prototype.panLoop = function (){
+	//this.center();
 };
 
 LaserPlatform.prototype.laserToggle = function (){
