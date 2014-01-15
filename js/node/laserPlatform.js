@@ -27,7 +27,7 @@ LaserPlatform.prototype.pan = function( degrees, duration, callback ) {
 };
 
 
-LaserPlatform.prototype.tilt = function( degrees, ?duration, ?callback ) {
+LaserPlatform.prototype.tilt = function( degrees, duration, callback ) {
   	this.servoTilt.move(degrees);
 };
 
@@ -48,7 +48,7 @@ LaserPlatform.prototype.laserOn = function (){
 
 LaserPlatform.prototype.laserOff = function (){
 	this.laser.off();
-	laserOn =false;
+	laserOn = false;
 };
 
 LaserPlatform.prototype.laserStrobe = function (){

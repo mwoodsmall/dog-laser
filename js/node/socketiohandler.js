@@ -1,7 +1,7 @@
 var events = require('events');
 function SocketIOHandler(laserPlatform) {
 	//turn into singleton
-	var io = require('socket.io').listen(8080);
+	var io = require('socket.io').listen(8181);
 	var lastComm = new Date();
 	io.sockets.on('connection', function (socket) {
 		socket.on('pan', function(data){
@@ -61,14 +61,7 @@ function SocketIOHandler(laserPlatform) {
 	    socket.emit("userJoin",{ });
 	
 	});
-	
-	setInterval(function(){
-		var time = new Date.getTime(); 
-		var seconds = Math.floor(time-lastComm)/1000;
-		if(seconds > 5){
-			laserPlatform.laserOff();
-		}
-	} , 5000);
+
 
 }
 module.exports = SocketIOHandler;

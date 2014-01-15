@@ -4,7 +4,7 @@ var five = require("../../../johnny-five/lib/johnny-five"),
     board, servo, buzzing, piezo;
 
 
-board = new five.Board();
+board = new five.Board({port:'/dev/tty.usbmodemfd121'});
 
 board.on("ready", function() {
 	var laserPlatform = new LaserPlatform(board, five);
